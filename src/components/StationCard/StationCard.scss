@@ -1,0 +1,19 @@
+.single-station-card {
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid black;
+  margin-bottom: 4px;
+  padding: 24px;
+  img {
+    width: 64px;
+    padding-right: 12px;
+  }
+}
+
+#link-name {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: black;
+  cursor: pointer;
+}
