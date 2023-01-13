@@ -1,9 +1,16 @@
 import logo from "../../images/logo-single.png";
 import "./StationCard.scss";
-import { GasStation, GasPrice } from "../../utilities/types";
+import { GasStation, GasTypes } from "../../utilities/types";
 import { Link } from "react-router-dom";
+import { findPriceByType } from "../../utilities/functions";
 
-export const StationCard = (props: GasStation) => {
+interface Props extends GasStation {
+  fuelType: GasTypes;
+}
+
+export const StationCard = (props: Props) => {
+  const gasPrice = findPriceByType(props.gasPrices, props.fuelType);
+
   return (
     <div className="single-station-card">
       <div>
@@ -14,13 +21,9 @@ export const StationCard = (props: GasStation) => {
         <p>{props.address}</p>
       </div>
       <div>
-        {props.gasPrices.map((price: GasPrice) => {
-          return (
-            <p>
-              {price.gasType} : {price.priceTag}
-            </p>
-          );
-        })}
+        <p>
+          {gasPrice.gasType} : {gasPrice.priceTag}
+        </p>
       </div>
     </div>
   );

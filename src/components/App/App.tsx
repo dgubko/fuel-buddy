@@ -7,7 +7,6 @@ import { AllStationsContainer } from "../AllStationsContainer/AllStationsContain
 import { GasStation } from "../../utilities/types";
 import { DetailsPage } from "../DetailsPage/DetailsPage";
 import { Page404 } from "../Page404/Page404";
-import { Form } from "../Form/Form";
 
 function App() {
   const [allStations, setAllStations] = useState<GasStation[]>([]);
