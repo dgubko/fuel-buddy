@@ -15,6 +15,10 @@ export const DetailsPage = (props: { allStations: GasStation[] }) => {
     return null;
   }
 
+  const handleClick = () => {
+    navigate("/");
+  };
+
   return (
     <div className="details">
       <h2>{station.title}</h2>
@@ -30,6 +34,7 @@ export const DetailsPage = (props: { allStations: GasStation[] }) => {
           );
         })}
       </p>
+      <button onClick={handleClick}>Go back</button>
     </div>
   );
 };
