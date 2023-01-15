@@ -40,7 +40,14 @@ export const AllStationsContainer = (props: any) => {
       )}
       {filtered.map((station: GasStation) => {
         return (
-          <StationCard key={station.cid} {...station} fuelType={fuelType} />
+          <StationCard
+            key={station.cid}
+            {...station}
+            fuelType={fuelType}
+            removeFromFav={props.removeFromFav}
+            favorites={props.favorites}
+            addToFav={props.addToFav}
+          />
         );
       })}
     </div>
