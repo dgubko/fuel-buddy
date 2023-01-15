@@ -3,6 +3,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import { Favorite, GasStation } from "../../utilities/types";
 import heart from "../../images/fav.svg";
 import heartFilled from "../../images/fav-filled.svg";
+import { StationMap } from "../Maps/StationMap";
 
 interface Props {
   allStations: GasStation[];
@@ -65,6 +66,7 @@ export const DetailsPage = (props: Props) => {
       <button className="heart-button" onClick={handleFavorite}>
         <img src={isFavorited ? heartFilled : heart} />
       </button>
+      <StationMap lat={station.location.lat} lng={station.location.lng} />
     </div>
   );
 };
