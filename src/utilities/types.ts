@@ -34,3 +34,10 @@ export type GasPrice = {
     price: number;
     gasType: GasTypes;
 }
+
+export interface Favorite {
+    title: string;
+    address: string;
+    gasPrices: GasPrice[]
+    cid: string;
+}

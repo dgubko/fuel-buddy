@@ -1,4 +1,5 @@
 import { GasTypes } from "../../utilities/types";
+import { useEffect } from "react";
 
 type Props = {
   location: string;
@@ -15,6 +16,13 @@ export const Form = (props: Props) => {
   const handleLocationChange = (event: any) => {
     props.setLocation(event.target.value);
   };
+
+  useEffect(() => {
+    return () => {
+      props.setLocation("");
+    };
+  }, []);
+
   return (
     <form className="inputs">
       <input
