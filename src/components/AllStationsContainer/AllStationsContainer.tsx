@@ -5,6 +5,7 @@ import { Form } from "../Form/Form";
 import { useState } from "react";
 import { GasTypes } from "../../utilities/types";
 import { findPriceByType } from "../../utilities/functions";
+import { LoadingAnimation } from "../LoadingAnimation/LoadingAnimation";
 
 export const AllStationsContainer = (props: any) => {
   const [location, setLocation] = useState<string>("");
@@ -26,6 +27,14 @@ export const AllStationsContainer = (props: any) => {
       const gasPriceB = findPriceByType(b.gasPrices, fuelType);
       return gasPriceA.price > gasPriceB.price ? 1 : -1;
     });
+
+  if (props.isLoading) {
+    return <LoadingAnimation />;
+  }
+
+  if (props.error) {
+    return <p>{props.error}</p>;
+  }
 
   return (
     <div className="all-station-container">
