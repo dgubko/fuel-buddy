@@ -44,7 +44,7 @@ export const DetailsPage = (props: Props) => {
   };
 
   const handleClick = () => {
-    navigate("/");
+    navigate(-1);
   };
 
   return (
