@@ -26,6 +26,7 @@ export const Form = (props: Props) => {
   return (
     <form className="inputs">
       <input
+        id="location-input"
         placeholder="Enter your city"
         value={props.location}
         onChange={handleLocationChange}
