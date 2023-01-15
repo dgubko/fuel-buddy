@@ -1,6 +1,6 @@
 import "./App.scss";
 import logo from "../../images/logo-new.svg";
-import { Factory, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Route, Routes } from "react-router-dom";
 import { getGasStations } from "../../apiCalls/gasStations";
 import { AllStationsContainer } from "../AllStationsContainer/AllStationsContainer";
@@ -13,6 +13,8 @@ import { Link } from "react-router-dom";
 function App() {
   const [allStations, setAllStations] = useState<GasStation[]>([]);
   const [favorites, setFavorites] = useState<Favorite[]>([]);
+  const [error, setError] = useState<string>("");
+  const [isLoading, setIsLoading] = useState<boolean>(true);
 
   const addToFav = (newItem: Favorite) => {
     setFavorites([...favorites, newItem]);
@@ -27,13 +29,19 @@ function App() {
   };
 
   useEffect(() => {
-    getGasStations().then((data) => {
-      setAllStations(
-        data.filter((station: GasStation) => {
-          return station.gasPrices;
-        })
-      );
-    });
+    getGasStations()
+      .then((data) => {
+        setAllStations(
+          data.filter((station: GasStation) => {
+            return station.gasPrices;
+          })
+        );
+        setIsLoading(false);
+      })
+      .catch((error) => {
+        setError(error.message);
+        setIsLoading(false);
+      });
   }, []);
 
   return (
@@ -52,6 +60,8 @@ function App() {
               removeFromFav={removeFromFav}
               favorites={favorites}
               addToFav={addToFav}
+              isLoading={isLoading}
+              error={error}
             />
           }
         />
