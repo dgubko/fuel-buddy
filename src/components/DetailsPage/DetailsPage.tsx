@@ -1,10 +1,23 @@
 import "./DetailsPage.scss";
 import { useNavigate, useParams } from "react-router-dom";
-import { GasStation } from "../../utilities/types";
+import { Favorite, GasStation } from "../../utilities/types";
+import heart from "../../images/fav.svg";
+import heartFilled from "../../images/fav-filled.svg";
 
-export const DetailsPage = (props: { allStations: GasStation[] }) => {
+interface Props {
+  allStations: GasStation[];
+  favorites: Favorite[];
+  addToFav: (value: Favorite) => void;
+  removeFromFav: (value: string) => void;
+}
+
+export const DetailsPage = (props: Props) => {
   const { id } = useParams();
   const navigate = useNavigate();
+
+  const isFavorited = props.favorites.some((fav) => {
+    return fav.cid === id;
+  });
 
   const station = props.allStations.find((station) => {
     return station.cid === id;
@@ -14,6 +27,20 @@ export const DetailsPage = (props: { allStations: GasStation[] }) => {
     navigate("/Page404");
     return null;
   }
+
+  const handleFavorite = () => {
+    if (!isFavorited) {
+      const newItem = {
+        title: station.title,
+        address: station.address,
+        gasPrices: station.gasPrices,
+        cid: station.cid,
+      };
+      props.addToFav(newItem);
+    } else {
+      props.removeFromFav(station.cid);
+    }
+  };
 
   const handleClick = () => {
     navigate("/");
@@ -35,6 +62,9 @@ export const DetailsPage = (props: { allStations: GasStation[] }) => {
         })}
       </p>
       <button onClick={handleClick}>Go back</button>
+      <button className="heart-button" onClick={handleFavorite}>
+        <img src={isFavorited ? heartFilled : heart} />
+      </button>
     </div>
   );
 };
