@@ -38,7 +38,7 @@ export const StationCard = (props: Props) => {
   return (
     <div className="single-station-card">
       <div>
-        <Link id="link-name" to={`/details/${props.cid}`}>
+        <Link className="link-name" to={`/details/${props.cid}`}>
           <img src={logo} alt="logo" />
           <h2>{props.title}</h2>
         </Link>

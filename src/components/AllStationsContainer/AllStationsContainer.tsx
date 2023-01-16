@@ -33,7 +33,7 @@ export const AllStationsContainer = (props: any) => {
   }
 
   if (props.error) {
-    return <p>{props.error}</p>;
+    return <p className="error-message">{props.error}</p>;
   }
 
   return (
@@ -45,7 +45,9 @@ export const AllStationsContainer = (props: any) => {
         setLocation={setLocation}
       />
       {!filtered.length && (
-        <p>There are no stations found in the selected area</p>
+        <p id="location-error-message">
+          There are no stations found in the selected area
+        </p>
       )}
       {filtered.map((station: GasStation) => {
         return (

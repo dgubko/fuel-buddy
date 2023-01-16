@@ -1,0 +1,90 @@
+[
+  {
+    "title": "Kum & Go",
+    "subTitle": null,
+    "price": null,
+    "menu": null,
+    "categoryName": "Gas station",
+    "address": "11505 W Belleview Ave, Littleton, CO 80127",
+    "locatedIn": null,
+    "neighborhood": "11505 W Belleview Ave",
+    "street": "11505 W Belleview Ave",
+    "city": "Littleton",
+    "postalCode": "80127",
+    "state": "Colorado",
+    "countryCode": "US",
+    "plusCode": "JVFC+XR Littleton, Colorado",
+    "website": "http://www.kumandgo.com/stores/0325/",
+    "phone": "(303) 904-9338",
+    "temporarilyClosed": false,
+    "claimThisBusiness": false,
+    "location": {
+      "lat": 39.6248914,
+      "lng": -105.1279462
+    },
+    "permanentlyClosed": false,
+    "totalScore": 4.6,
+    "isAdvertisement": false,
+    "rank": 3,
+    "placeId": "ChIJ4fVvvnl5a4cRBTxDNkWYqDI",
+    "categories": [
+      "Gas station",
+      "ATM",
+      "Convenience store",
+      "Diesel fuel supplier",
+      "Takeout Restaurant",
+      "Pizza Takeout"
+    ],
+    "cid": "3650334921014328325",
+    "url": "https://www.google.com/maps/place/Kum+%26+Go/@39.6248914,-105.1279462,17z/data=!3m1!4b1!4m5!3m4!1s0x876b7979be6ff5e1:0x32a8984536433c05!8m2!3d39.6248914!4d-105.1279462?hl=en",
+    "searchPageUrl": "https://www.google.com/maps/search/gas%20station%20in%20CO?hl=en",
+    "searchPageLoadedUrl": "https://www.google.com/maps/search/gas+station+in+CO/@39.7628157,-105.3283195,8z?hl=en",
+    "searchString": "gas station in CO",
+    "scrapedAt": "2023-01-10T18:01:33.913Z",
+    "reviewsCount": 44,
+    "reviewsDistribution": {
+      "oneStar": 1,
+      "twoStar": 2,
+      "threeStar": 2,
+      "fourStar": 3,
+      "fiveStar": 36
+    },
+    "imagesCount": 45,
+    "reviews": [],
+    "orderBy": [],
+    "gasPrices": [
+      {
+        "priceTag": "$3.20",
+        "updatedAt": "2023-01-10T01:55:41.000Z",
+        "unit": "gallon",
+        "currency": "USD",
+        "price": 3.2,
+        "gasType": "Regular"
+      },
+      {
+        "priceTag": "$3.50",
+        "updatedAt": "2023-01-09T13:32:24.000Z",
+        "unit": "gallon",
+        "currency": "USD",
+        "price": 3.5,
+        "gasType": "Midgrade"
+      },
+      {
+        "priceTag": "$3.85",
+        "updatedAt": "2023-01-09T15:44:37.000Z",
+        "unit": "gallon",
+        "currency": "USD",
+        "price": 3.85,
+        "gasType": "Premium"
+      },
+      {
+        "priceTag": "$4.10",
+        "updatedAt": "2023-01-09T17:38:51.000Z",
+        "unit": "gallon",
+        "currency": "USD",
+        "price": 4.1,
+        "gasType": "Diesel"
+      }
+    ]
+  }
+]

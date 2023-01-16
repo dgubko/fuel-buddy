@@ -8,9 +8,9 @@ interface Props {
 
 export const Favorites = (props: Props) => {
   return (
-    <div>
+    <div className="fav-card">
       {!props.favorites.length ? (
-        <p>You have no favorite gas stations yet!</p>
+        <p className="no-fav-message">You have no favorite gas stations yet!</p>
       ) : (
         props.favorites.map((fav: Favorite) => {
           return (
