@@ -33,7 +33,7 @@ export const AllStationsContainer = (props: any) => {
   }
 
   if (props.error) {
-    return <p>{props.error}</p>;
+    return <p className="error-message">{props.error}</p>;
   }
 
   return (

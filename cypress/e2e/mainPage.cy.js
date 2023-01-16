@@ -82,13 +82,45 @@ describe("Main page test", () => {
     cy.get(".details > h2").contains("Kum & Go");
   });
 
-  it("should be able to favorite station by click", () => {
+  it("should be able to favorite and unfavorite station by click", () => {
     cy.get("header").children("a").eq(0).click();
     cy.get(".no-fav-message").should("be.visible");
+
+    //Favoriting
     cy.get("header").children("a").eq(1).click();
     cy.get(".single-station-card").eq(0).should("contain", "Kum & Go");
     cy.get(".heart-button").eq(0).click();
     cy.get("header").children("a").eq(0).click();
     cy.get(".fav-card").eq(0).should("contain", "Kum & Go");
+
+    //Unfavoriting
+    cy.get("header").children("a").eq(1).click();
+    cy.get(".single-station-card").eq(0).should("contain", "Kum & Go");
+    cy.get(".heart-button").eq(0).click();
+    cy.get("header").children("a").eq(0).click();
+    cy.get(".no-fav-message").should("be.visible");
+  });
+});
+
+describe("Server-side error", () => {
+  beforeEach(() => {
+    cy.intercept(
+      "https://api.apify.com/v2/datasets/XNfzEMoqfsLBT5bOT/items?token=apify_api_zvLd5bcc9q4naeNIcfU5X3oc9guZJo1npQcP",
+      {
+        method: "GET",
+      },
+      {
+        statusCode: 500,
+      }
+    );
+    cy.visit("http://localhost:3000/");
+  });
+
+  it("Should not show card container if fetch failed", () => {
+    cy.get(".all-station-container").should("not.exist");
+  });
+
+  it("should show error message", () => {
+    cy.get(".error-message").should("contain", "Unexpected end of JSON input");
   });
 });
