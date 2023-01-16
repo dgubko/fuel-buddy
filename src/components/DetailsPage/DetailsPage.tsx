@@ -51,8 +51,8 @@ export const DetailsPage = (props: Props) => {
     <div className="details">
       <h2>{station.title}</h2>
       <h3>{station.address}</h3>
-      <p>Reviews: {station.reviewsCount}</p>
-      <p>Phone number: {station.phone}</p>
+      <p className="details-review-count">Reviews: {station.reviewsCount}</p>
+      <p className="details-phone-number">Phone number: {station.phone}</p>
       <p className="details-prices-section">
         {station.gasPrices.map((price: any) => {
           return (
