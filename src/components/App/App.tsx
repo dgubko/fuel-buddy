@@ -8,7 +8,8 @@ import { Favorite, GasStation } from "../../utilities/types";
 import { DetailsPage } from "../DetailsPage/DetailsPage";
 import { Page404 } from "../Page404/Page404";
 import { Favorites } from "../Favorites/Favorites";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+import { cleanStationsWithGasPrice } from "../../utilities/functions";
 
 function App() {
   const [allStations, setAllStations] = useState<GasStation[]>([]);
@@ -21,21 +22,13 @@ function App() {
   };
 
   const removeFromFav = (id: string) => {
-    setFavorites(
-      favorites.filter((item) => {
-        return item.cid !== id;
-      })
-    );
+    setFavorites(favorites.filter((item) => item.cid !== id));
   };
 
   useEffect(() => {
     getGasStations()
       .then((data) => {
-        setAllStations(
-          data.filter((station: GasStation) => {
-            return station.gasPrices;
-          })
-        );
+        setAllStations(cleanStationsWithGasPrice(data));
         setIsLoading(false);
       })
       .catch((error) => {
@@ -48,8 +41,24 @@ function App() {
     <div className="App">
       <header>
         <img src={logo} alt="Fuel Buddy Logo" />
-        <Link to="/favorites">Favorites</Link>
-        <Link to="/">All Stations</Link>
+        <nav>
+          <NavLink
+            to="/favorites"
+            className={({ isActive }: { isActive: boolean }) =>
+              isActive ? "active" : undefined
+            }
+          >
+            Favorites
+          </NavLink>
+          <NavLink
+            to="/"
+            className={({ isActive }: { isActive: boolean }) =>
+              isActive ? "active" : undefined
+            }
+          >
+            All Stations
+          </NavLink>
+        </nav>
       </header>
       <Routes>
         <Route
