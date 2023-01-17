@@ -48,8 +48,12 @@ export const DetailsPage = (props: Props) => {
     <div className="details">
       <div className="info">
         <section className="header">
-          <button className="heart-button" onClick={handleFavorite}>
-            <img src={isFavorited ? heartFilled : heart} />
+          <button
+            className="heart-button"
+            aria-label="Favorite"
+            onClick={handleFavorite}
+          >
+            <img src={isFavorited ? heartFilled : heart} alt="heart" />
           </button>
           <h1>{station.title}</h1>
         </section>

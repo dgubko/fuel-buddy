@@ -58,8 +58,12 @@ export const StationCard = ({
             <span>⭐️ {totalScore}</span>
             <span>({reviewsCount})</span>
           </p>
-          <button className="heart-button" onClick={handleFavorite}>
-            <img src={isFavorited ? heartFilled : heart} />
+          <button
+            className="heart-button"
+            aria-label="Favorite"
+            onClick={handleFavorite}
+          >
+            <img src={isFavorited ? heartFilled : heart} alt="heart" />
           </button>
         </div>
         <div>
