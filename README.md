@@ -8,7 +8,7 @@ Fuel Buddy was constructed utilizing React, Router, and Cypress testing. This ap
 
 ![Typescript](https://img.shields.io/npm/types/typescript?color=%23000000&label=%20&logo=typescript&style=for-the-badge)
 
-[!React](https://img.shields.io/badge/React?color=%23000000&label=%20&logo=typescript&style=for-the-badge)
+![React](https://img.shields.io/badge/React?color=%23000000&label=%20&logo=react&style=for-the-badge)
 
 ![React Router](https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white)
 
@@ -46,7 +46,11 @@ git clone https://github.com/dgubko/fuel-buddy.git
 
 ## Preview
 
+### Details
+
 ![2023-01-16 19 30 48](https://user-images.githubusercontent.com/105132801/212797250-61c5540f-6e51-4785-9a2f-5a712d43c626.gif)
+
+### Errors
 
 ![2023-01-16 19 36 25](https://user-images.githubusercontent.com/105132801/212797526-e1bc6de7-3e6b-4875-ad35-8a4595bc71bb.gif)
 
