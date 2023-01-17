@@ -12,7 +12,7 @@ interface Props {
   lng: number;
 }
 
-const navStyle: any = {
+const navStyle: React.CSSProperties = {
   position: "absolute",
   top: 36,
   left: 0,
@@ -27,7 +27,7 @@ export function StationMap(props: Props) {
         latitude: props.lat,
         zoom: 17,
       }}
-      style={{ width: 600, height: 400, position: "relative" }}
+      style={{ width: 400, height: 400, position: "relative" }}
       mapStyle="mapbox://styles/mapbox/streets-v9"
       mapboxAccessToken={MAPBOX_TOKEN}
     >
