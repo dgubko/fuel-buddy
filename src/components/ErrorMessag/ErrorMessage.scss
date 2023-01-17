@@ -1,0 +1,38 @@
+.error-message {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 70vh;
+  gap: 16px;
+  & > * {
+    margin: 0;
+  }
+  h2 {
+    color: #1a779a;
+  }
+  @media only screen and (max-width: 560px) {
+    img {
+      width: 80%;
+    }
+  }
+}
+
+.primary-btn {
+  cursor: pointer;
+  background-color: #a6def4;
+  color: #07384a;
+  border: none;
+  padding: 6px 24px;
+  font-weight: 700;
+  border-radius: 16px;
+  box-shadow: 0 0 4px #1a779a;
+  text-decoration: none;
+  font-size: 12px;
+  &:hover {
+    transform: scale(0.95);
+  }
+  &:active {
+    transform: scale(1);
+  }
+}
