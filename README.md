@@ -86,3 +86,7 @@ git clone https://github.com/dgubko/fuel-buddy.git
 ## Reflection
 
 - Learning TypeScript has been a valuable experience for me. I have gained a deeper understanding of the importance of strong typing and type annotations in code, which has helped me to write more robust and maintainable code. TypeScript's static type checking has also helped me to catch errors early on in the development process, saving me time and effort in the long run. Additionally, the ability to use React features with TypeScript has been a great advantage, allowing me to write more efficient and expressive code. Overall, I am grateful for the opportunity to learn TypeScript and I look forward to using it in my future projects.
+
+<!-- MARKDOWN LINKS & IMAGES -->
+[React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
+[React-url]: https://reactjs.org/
