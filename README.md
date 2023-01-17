@@ -8,7 +8,7 @@ Fuel Buddy was constructed utilizing React, Router, and Cypress testing. This ap
 
 ![Typescript](https://img.shields.io/npm/types/typescript?color=%23000000&label=%20&logo=typescript&style=for-the-badge)
 
-[![React][react.js]][react-url]
+[!React](https://img.shields.io/badge/React?color=%23000000&label=%20&logo=typescript&style=for-the-badge)
 
 ![React Router](https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white)
 
@@ -66,9 +66,18 @@ git clone https://github.com/dgubko/fuel-buddy.git
 
 ### All gas stations Figma wireframe
 
+![All Stations Page](https://user-images.githubusercontent.com/105132801/212797872-a4a69af2-a959-4c02-94cf-0a0803376a5e.png)
+
+
 ### Favorites Page Figma Wireframe
 
+![Favorite Page](https://user-images.githubusercontent.com/105132801/212797965-8a1a549f-31e3-4399-94db-cf15e69cecd6.png)
+
+
 ### Details Page Figma Wireframe
+
+![Detail Page](https://user-images.githubusercontent.com/105132801/212798024-b5608f37-11d1-473b-80df-ba8465ca12d4.png)
+
 
 ## Reflection
 
