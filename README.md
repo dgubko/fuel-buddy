@@ -8,7 +8,7 @@ Fuel Buddy was constructed utilizing React, Router, and Cypress testing. This ap
 
 ![Typescript](https://img.shields.io/npm/types/typescript?color=%23000000&label=%20&logo=typescript&style=for-the-badge)
 
-![React](https://img.shields.io/badge/React?color=%23000000&label=%20&logo=react&style=for-the-badge)
+[![React][React.js]][React-url]
 
 ![React Router](https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white)
 
