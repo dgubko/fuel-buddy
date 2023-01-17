@@ -1,0 +1,12 @@
+.inputs {
+  margin-bottom: 24px;
+  & > * {
+    padding: 4px;
+    border: 1px solid #07384a;
+    border-radius: 4px;
+    margin-right: 8px;
+    &:focus {
+      outline: 2px solid #59c2e9;
+    }
+  }
+}

@@ -1,3 +1,4 @@
+import "./Form.scss";
 import { GasTypes } from "../../utilities/types";
 import { useEffect } from "react";
 

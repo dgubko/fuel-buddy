@@ -5,52 +5,73 @@ import { Link } from "react-router-dom";
 import { findPriceByType } from "../../utilities/functions";
 import heart from "../../images/fav.svg";
 import heartFilled from "../../images/fav-filled.svg";
-import { useState } from "react";
 
 interface Props extends GasStation {
   fuelType: GasTypes;
-  favorites: any[];
+  favorites: Favorite[];
   addToFav: (value: Favorite) => void;
   removeFromFav: (value: string) => void;
 }
 
-export const StationCard = (props: Props) => {
-  const gasPrice = findPriceByType(props.gasPrices, props.fuelType);
+export const StationCard = ({
+  favorites,
+  gasPrices,
+  fuelType,
+  cid,
+  title,
+  address,
+  reviewsCount,
+  totalScore,
+  phone,
+  addToFav,
+  removeFromFav,
+}: Props) => {
+  const gasPrice = findPriceByType(gasPrices, fuelType);
 
-  const isFavorited = props.favorites.some((fav) => {
-    return fav.cid === props.cid;
-  });
+  const isFavorited = favorites.some((fav) => fav.cid === cid);
 
   const handleFavorite = () => {
     if (!isFavorited) {
       const newItem = {
-        title: props.title,
-        address: props.address,
-        gasPrices: props.gasPrices,
-        cid: props.cid,
+        title: title,
+        address: address,
+        gasPrices: gasPrices,
+        cid: cid,
+        reviewsCount: reviewsCount,
+        totalScore: totalScore,
       };
-      props.addToFav(newItem);
+      addToFav(newItem);
     } else {
-      props.removeFromFav(props.cid);
+      removeFromFav(cid);
     }
   };
 
   return (
-    <div className="single-station-card">
+    <div className="single-station-card card">
       <div>
-        <Link className="link-name" to={`/details/${props.cid}`}>
+        <Link className="link-name" to={`/details/${cid}`}>
           <img src={logo} alt="logo" />
-          <h2>{props.title}</h2>
+          <h2>{title}</h2>
         </Link>
-        <p>{props.address}</p>
+        <div className="review">
+          <p>
+            <span>⭐️ {totalScore}</span>
+            <span>({reviewsCount})</span>
+          </p>
+          <button className="heart-button" onClick={handleFavorite}>
+            <img src={isFavorited ? heartFilled : heart} />
+          </button>
+        </div>
+        <div>
+          <p>{address}</p>
+          <p>☎ {phone || "Not Available"}</p>
+        </div>
       </div>
-      <div>
-        <p>
-          {gasPrice.gasType} : {gasPrice.priceTag}
+      <div className="gas-prices-section">
+        <p className="gas-price">
+          <span>{gasPrice.gasType}</span>
+          <span>{gasPrice.priceTag}</span>
         </p>
-        <button className="heart-button" onClick={handleFavorite}>
-          <img src={isFavorited ? heartFilled : heart} />
-        </button>
       </div>
     </div>
   );

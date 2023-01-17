@@ -1,26 +1,33 @@
 .single-station-card {
   display: flex;
   justify-content: space-between;
-  border: 1px solid #d1d3d5;
-  border-radius: 4px;
-  margin-bottom: 4px;
-  padding: 24px;
-  img {
-    width: 64px;
-    padding-right: 12px;
+  & > div {
+    padding: 16px;
+    &:first-of-type {
+      display: grid;
+      grid-template-columns: repeat(2, auto);
+      width: 100%;
+    }
+    &:last-of-type {
+      padding-inline: 40px;
+    }
   }
-}
-
-.link-name {
-  display: flex;
-  align-items: center;
-  text-decoration: none;
-  color: black;
-  cursor: pointer;
+  .review {
+    justify-self: end;
+  }
+  @media only screen and (max-width: 600px) {
+    flex-direction: column;
+    & > div:first-of-type {
+      display: block;
+    }
+  }
 }
 
 .heart-button {
   border: none;
-  background-color: white;
+  background: none;
   cursor: pointer;
+  img {
+    width: 24px;
+  }
 }
