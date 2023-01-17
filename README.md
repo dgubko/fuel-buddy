@@ -7,9 +7,13 @@ Fuel Buddy was constructed utilizing React, Router, and Cypress testing. This ap
 ## Built With
 
 ![Typescript](https://img.shields.io/npm/types/typescript?color=%23000000&label=%20&logo=typescript&style=for-the-badge)
+
 [![React][react.js]][react-url]
+
 ![React Router](https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white)
+
 ![Cypress](https://img.shields.io/badge/-cypress-%23E5E5E5?style=for-the-badge&logo=cypress&logoColor=058a5e)
+   
 ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
 
 ### Other Technologies
@@ -38,13 +42,25 @@ git clone https://github.com/dgubko/fuel-buddy.git
 
 ## Deployed Link
 
----
+[FUEL BUDDY IN ACTION](https://fuel-buddy.vercel.app/)
 
 ## Preview
 
+![2023-01-16 19 30 48](https://user-images.githubusercontent.com/105132801/212797250-61c5540f-6e51-4785-9a2f-5a712d43c626.gif)
+
+![2023-01-16 19 36 25](https://user-images.githubusercontent.com/105132801/212797526-e1bc6de7-3e6b-4875-ad35-8a4595bc71bb.gif)
+
 ### Searching
 
+![2023-01-16 19 27 53](https://user-images.githubusercontent.com/105132801/212797088-6502323d-af23-428c-ae80-98a24a9f12a4.gif)
+
+![2023-01-16 19 30 48](https://user-images.githubusercontent.com/105132801/212797334-75a28737-90b9-432a-a1b5-77b0fae8b763.gif)
+
+
 ### Favoriting
+
+![2023-01-16 19 30 19](https://user-images.githubusercontent.com/105132801/212797227-1c044cba-8826-405f-923d-99c5a029ef3b.gif)
+
 
 ## Planning Process
 
