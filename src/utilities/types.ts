@@ -23,7 +23,8 @@ export interface GasStation {
         fourStar: number;
         fiveStar: number;
     }
-    gasPrices: GasPrice[]
+    gasPrices: GasPrice[],
+    categories: string[]
 }
 
 export type GasTypes = "Regular" | "Midgrade" | "Premium" | "Diesel"
@@ -40,4 +41,6 @@ export interface Favorite {
     address: string;
     gasPrices: GasPrice[]
     cid: string;
+    totalScore: number;
+    reviewsCount: number;
 }
