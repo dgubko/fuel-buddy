@@ -1,46 +1,59 @@
-# Getting Started with Create React App
+## About The Project
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Fuel Buddy is a React web application that displays around 120 top gas stations retrieved from the apify built API. A live search bar can be used to search a gas station for specific location. A drop down menu can be used to choose a fuel type. Upon selecting a particular gas station, the user is able to peruse the selected gas station's details such as its name, address, phone number, features & amenities and prices for all types of fuel being sold at the gas station. The user can save the specific gas station to their favorites or remove it by clicking the heart icon. The user can see all favorited gas stations by clicking favorites button.
 
-## Available Scripts
+Fuel Buddy was constructed utilizing React, Router, and Cypress testing. This application allowed me to showcase my self-taught knowledge of Typescript. It took us approximately 60 hours total to finish. To complete this project I also used GitHub project board and Figma.
 
-In the project directory, you can run:
+## Built With
 
-### `npm start`
+![Typescript](https://img.shields.io/npm/types/typescript?color=%23000000&label=%20&logo=typescript&style=for-the-badge)
+[![React][react.js]][react-url]
+![React Router](https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white)
+![Cypress](https://img.shields.io/badge/-cypress-%23E5E5E5?style=for-the-badge&logo=cypress&logoColor=058a5e)
+![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Other Technologies
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+GitHub Project Board | Figma
 
-### `npm test`
+## Installation
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. Clone the repo
 
-### `npm run build`
+```sh
+git clone https://github.com/dgubko/fuel-buddy.git
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+2. Install NPM packages
+   ```sh
+   npm i
+   npm start
+   ```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Learning Goals
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Solidify a new technology (Typescript) outside of the Turing curriculum and incorporate the new technology into an application
 
-### `npm run eject`
+- Solidify Network requests, React, React Router, Cypress testing
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Deployed Link
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+---
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Preview
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### Searching
 
-## Learn More
+### Favoriting
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Planning Process
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### All gas stations Figma wireframe
+
+### Favorites Page Figma Wireframe
+
+### Details Page Figma Wireframe
+
+## Reflection
+
+- Learning TypeScript has been a valuable experience for me. I have gained a deeper understanding of the importance of strong typing and type annotations in code, which has helped me to write more robust and maintainable code. TypeScript's static type checking has also helped me to catch errors early on in the development process, saving me time and effort in the long run. Additionally, the ability to use React features with TypeScript has been a great advantage, allowing me to write more efficient and expressive code. Overall, I am grateful for the opportunity to learn TypeScript and I look forward to using it in my future projects.

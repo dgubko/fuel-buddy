@@ -1,5 +1,7 @@
+import "./Favorites.scss";
 import { Favorite } from "../../utilities/types";
 import { FavCard } from "../FavCard/FavCard";
+import { ErrorMessage } from "../ErrorMessag/ErrorMessage";
 
 interface Props {
   removeFromFav: (value: string) => void;
@@ -8,9 +10,13 @@ interface Props {
 
 export const Favorites = (props: Props) => {
   return (
-    <div className="fav-card">
+    <div className="fav-container container">
+      <h1>Favorites</h1>
       {!props.favorites.length ? (
-        <p className="no-fav-message">You have no favorite gas stations yet!</p>
+        <ErrorMessage
+          message="You have no favorite gas stations yet!"
+          hasBackButton
+        />
       ) : (
         props.favorites.map((fav: Favorite) => {
           return (

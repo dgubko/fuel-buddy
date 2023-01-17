@@ -1,0 +1,34 @@
+.fav-card {
+  margin: 12px;
+  & > p {
+    margin: 0 16px 16px;
+  }
+  & > div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px;
+    &:last-of-type {
+      justify-content: center;
+    }
+  }
+  @media only screen and (max-width: 480px) {
+    & > div {
+      flex-direction: column;
+      align-items: start;
+    }
+    .gas-prices-section {
+      align-items: center;
+      .gas-price {
+        border-left: none;
+        padding: 0;
+        margin: 0;
+      }
+    }
+  }
+}
+
+.name-link {
+  text-decoration: none;
+  color: black;
+}

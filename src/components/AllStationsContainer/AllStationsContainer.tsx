@@ -1,43 +1,46 @@
 import "./AllStationsContainer.scss";
-import { GasPrice, GasStation } from "../../utilities/types";
+import { GasPrice, GasStation, Favorite } from "../../utilities/types";
 import { StationCard } from "../StationCard/StationCard";
 import { Form } from "../Form/Form";
 import { useState } from "react";
 import { GasTypes } from "../../utilities/types";
-import { findPriceByType } from "../../utilities/functions";
+import { sortAndFilterStations } from "../../utilities/functions";
 import { LoadingAnimation } from "../LoadingAnimation/LoadingAnimation";
+import { ErrorMessage } from "../ErrorMessag/ErrorMessage";
 
-export const AllStationsContainer = (props: any) => {
+interface Props {
+  allStations: GasStation[];
+  isLoading: boolean;
+  error: string;
+  favorites: Favorite[];
+  removeFromFav: (value: string) => void;
+  addToFav: (value: Favorite) => void;
+}
+
+export const AllStationsContainer = ({
+  allStations,
+  isLoading,
+  error,
+  favorites,
+  removeFromFav,
+  addToFav,
+}: Props) => {
   const [location, setLocation] = useState<string>("");
   const [fuelType, setFuelType] = useState<GasTypes>("Regular");
 
-  const filtered = props.allStations
-    .filter((station: GasStation) => {
-      const matchLocation = station.address
-        .toLowerCase()
-        .includes(location.toLowerCase());
+  const filtered = sortAndFilterStations(allStations, location, fuelType);
 
-      const hasPrice = station.gasPrices.some((price: GasPrice) => {
-        return price.gasType === fuelType;
-      });
-      return matchLocation && hasPrice;
-    })
-    .sort((a: GasStation, b: GasStation) => {
-      const gasPriceA = findPriceByType(a.gasPrices, fuelType);
-      const gasPriceB = findPriceByType(b.gasPrices, fuelType);
-      return gasPriceA.price > gasPriceB.price ? 1 : -1;
-    });
-
-  if (props.isLoading) {
+  if (isLoading) {
     return <LoadingAnimation />;
   }
 
-  if (props.error) {
-    return <p className="error-message">{props.error}</p>;
+  if (error) {
+    return <ErrorMessage message={`Something went wrong: ${error}`} />;
   }
 
   return (
-    <div className="all-station-container">
+    <div className="all-station-container container">
+      <h1>Search Gas Station in CO</h1>
       <Form
         location={location}
         fuelType={fuelType}
@@ -45,9 +48,7 @@ export const AllStationsContainer = (props: any) => {
         setLocation={setLocation}
       />
       {!filtered.length && (
-        <p id="location-error-message">
-          There are no stations found in the selected area
-        </p>
+        <ErrorMessage message="There are no stations found in the selected area. Please change location or fuel type" />
       )}
       {filtered.map((station: GasStation) => {
         return (
@@ -55,9 +56,9 @@ export const AllStationsContainer = (props: any) => {
             key={station.cid}
             {...station}
             fuelType={fuelType}
-            removeFromFav={props.removeFromFav}
-            favorites={props.favorites}
-            addToFav={props.addToFav}
+            removeFromFav={removeFromFav}
+            favorites={favorites}
+            addToFav={addToFav}
           />
         );
       })}

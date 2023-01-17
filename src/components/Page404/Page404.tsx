@@ -1,12 +1,10 @@
-import { Link } from "react-router-dom";
+import { ErrorMessage } from "../ErrorMessag/ErrorMessage";
 
 export const Page404 = () => {
   return (
-    <div>
-      <h1>Sorry page does not exist</h1>
-      <Link id="go-back-button" to="/">
-        Go back
-      </Link>
-    </div>
+    <ErrorMessage
+      message="Page 404: Sorry, page does not exist!"
+      hasBackButton
+    />
   );
 };

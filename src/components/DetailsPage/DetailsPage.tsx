@@ -1,6 +1,6 @@
 import "./DetailsPage.scss";
 import { useNavigate, useParams } from "react-router-dom";
-import { Favorite, GasStation } from "../../utilities/types";
+import { Favorite, GasPrice, GasStation } from "../../utilities/types";
 import heart from "../../images/fav.svg";
 import heartFilled from "../../images/fav-filled.svg";
 import { StationMap } from "../Maps/StationMap";
@@ -16,13 +16,8 @@ export const DetailsPage = (props: Props) => {
   const { id } = useParams();
   const navigate = useNavigate();
 
-  const isFavorited = props.favorites.some((fav) => {
-    return fav.cid === id;
-  });
-
-  const station = props.allStations.find((station) => {
-    return station.cid === id;
-  });
+  const isFavorited = props.favorites.some((fav) => fav.cid === id);
+  const station = props.allStations.find((station) => station.cid === id);
 
   if (!station) {
     navigate("/Page404");
@@ -35,6 +30,8 @@ export const DetailsPage = (props: Props) => {
         title: station.title,
         address: station.address,
         gasPrices: station.gasPrices,
+        reviewsCount: station.reviewsCount,
+        totalScore: station.totalScore,
         cid: station.cid,
       };
       props.addToFav(newItem);
@@ -49,23 +46,46 @@ export const DetailsPage = (props: Props) => {
 
   return (
     <div className="details">
-      <h2>{station.title}</h2>
-      <h3>{station.address}</h3>
-      <p className="details-review-count">Reviews: {station.reviewsCount}</p>
-      <p className="details-phone-number">Phone number: {station.phone}</p>
-      <p className="details-prices-section">
-        {station.gasPrices.map((price: any) => {
-          return (
-            <p className="details-price">
-              {price.gasType} : {price.priceTag}
-            </p>
-          );
-        })}
+      <div className="info">
+        <section className="header">
+          <button className="heart-button" onClick={handleFavorite}>
+            <img src={isFavorited ? heartFilled : heart} />
+          </button>
+          <h1>{station.title}</h1>
+        </section>
+        <section>
+          <div>
+            <h3>{station.address}</h3>
+            <p className="details-phone-number">☎ {station.phone}</p>
+          </div>
+        </section>
+        <div className="details-features">
+          <h5>Features & Amenities</h5>
+          <div>
+            {station.categories.map((category) => (
+              <p className="category-tag">{category}</p>
+            ))}
+          </div>
+        </div>
+        <div className="gas-prices-section">
+          {station.gasPrices.map((price: GasPrice) => {
+            return (
+              <p className="gas-price">
+                <span>{price.gasType}</span>
+                <span>{price.priceTag}</span>
+              </p>
+            );
+          })}
+        </div>
+        <button className="primary-btn" onClick={handleClick}>
+          Go back
+        </button>
+      </div>
+      <p className="details-review-count">
+        <div>⭐️ {station.totalScore}</div>
+        <div>based on</div>
+        <div>{station.reviewsCount} reviews</div>
       </p>
-      <button onClick={handleClick}>Go back</button>
-      <button className="heart-button" onClick={handleFavorite}>
-        <img src={isFavorited ? heartFilled : heart} />
-      </button>
       <StationMap lat={station.location.lat} lng={station.location.lng} />
     </div>
   );
