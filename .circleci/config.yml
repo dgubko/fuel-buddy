@@ -9,8 +9,8 @@ executors:
 workflows:
   build:
     jobs:
-      - cypress/install
-      - cypress/run:
+      - cypress-io/install
+      - cypress-io/run:
           requires:
             - cypress/install
           executor: with-chrome
