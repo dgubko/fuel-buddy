@@ -6,20 +6,24 @@ executors:
     resource_class: small
     docker:
       - image: "cypress/browsers:node14.16.0-chrome90-ff88"
+jobs:
+  run-app:
+    steps:
+      - checkout
+      - run:
+          name: Install dependencies
+          command: npm install
+      - run:
+          name: Run server
+          command: npm start
 workflows:
   build:
     jobs:
-      - run-app:
-        steps:
-          - run:
-            name: Install dependencies
-            command: npm install
-          - run:
-            name: Run
-            command: npm start
+      - run-app
       - cypress/install
       - cypress/run:
           requires:
+            - run-app
             - cypress/install
           executor: with-chrome
           browser: chrome
