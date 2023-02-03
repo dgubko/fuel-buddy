@@ -27,9 +27,9 @@ workflows:
   build:
     jobs:
       - install-deps
-      - run-app
+      - run-app:
         requires:
-            - install-deps
+          - install-deps
       - cypress/install
       - cypress/run:
           requires:
