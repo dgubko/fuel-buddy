@@ -9,15 +9,11 @@ executors:
 workflows:
   build:
     jobs:
+      - npm install
+      - npm start
       - cypress/install
       - cypress/run:
           requires:
-            - run:
-              name: Install dependencies
-              command: npm install
-            - run:
-              name: Run server
-              command: npm start
             - cypress/install
           executor: with-chrome
           browser: chrome
