@@ -1,6 +1,6 @@
 version: 2.1
 orbs:
-  cypress: cypress-io/cypress@1
+  cypress: cypress-io/cypress@1.7.0
 executors:
   with-chrome:
     resource_class: small
@@ -9,8 +9,8 @@ executors:
 workflows:
   build:
     jobs:
-      - cypress-io/install
-      - cypress-io/run:
+      - cypress/install
+      - cypress/run:
           requires:
             - cypress/install
           executor: with-chrome
