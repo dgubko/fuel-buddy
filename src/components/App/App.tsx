@@ -37,25 +37,18 @@ function App() {
       });
   }, []);
 
+  const setClassName = ({ isActive }: { isActive: boolean }) =>
+    isActive ? "active" : undefined;
+
   return (
     <div className="App">
       <header>
         <img src={logo} alt="Fuel Buddy Logo" />
         <nav>
-          <NavLink
-            to="/favorites"
-            className={({ isActive }: { isActive: boolean }) =>
-              isActive ? "active" : undefined
-            }
-          >
+          <NavLink to="/favorites" className={setClassName}>
             Favorites
           </NavLink>
-          <NavLink
-            to="/"
-            className={({ isActive }: { isActive: boolean }) =>
-              isActive ? "active" : undefined
-            }
-          >
+          <NavLink to="/" className={setClassName}>
             All Stations
           </NavLink>
         </nav>
