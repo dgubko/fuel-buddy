@@ -9,8 +9,12 @@ executors:
 workflows:
   build:
     jobs:
-      - npm install
-      - npm start
+      - run:
+          name: Install dependencies
+          command: npm install
+      - run:
+          name: Run CRA
+          command: npm start
       - cypress/install
       - cypress/run:
           requires:
