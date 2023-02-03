@@ -8,6 +8,8 @@ executors:
       - image: "cypress/browsers:node14.16.0-chrome90-ff88"
 jobs:
   run-app:
+    docker:
+      - image: circleci/node:14
     steps:
       - checkout
       - run:
