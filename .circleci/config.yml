@@ -12,6 +12,12 @@ workflows:
       - cypress/install
       - cypress/run:
           requires:
+            - run:
+              name: Install dependencies
+              command: npm install
+            - run:
+              name: Run server
+              command: npm start
             - cypress/install
           executor: with-chrome
           browser: chrome
