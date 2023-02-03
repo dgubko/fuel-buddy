@@ -6,35 +6,17 @@ executors:
     resource_class: small
     docker:
       - image: "cypress/browsers:node14.16.0-chrome90-ff88"
-jobs:
-  install-deps:
-    docker:
-      - image: circleci/node:14
-    steps:
-      - checkout
-      - run:
-          name: Install dependencies
-          command: npm install
-  run-app:
-    docker:
-      - image: circleci/node:14
-    steps:
-      - checkout
-      - run:
-          name: Run server
-          command: npm start
 workflows:
   build:
     jobs:
-      - install-deps
-      - run-app:
-          requires:
-            - install-deps
       - cypress/install
       - cypress/run:
           requires:
             - install-deps
             - cypress/install
+          install-command: npm install
+          start: npm start
+          wait-on: "http://localhost:3000"
           executor: with-chrome
           browser: chrome
           post-steps:
