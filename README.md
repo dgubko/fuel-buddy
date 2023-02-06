@@ -7,14 +7,14 @@ Fuel Buddy was constructed utilizing React, Router, and Cypress testing. This ap
 ## Built With
 
 ![Typescript](https://img.shields.io/npm/types/typescript?color=%23000000&label=%20&logo=typescript&style=for-the-badge)
-[![React][React.js]][React-url]
+[![React][react.js]][react-url]
 ![React Router](https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white)
 ![Cypress](https://img.shields.io/badge/-cypress-%23E5E5E5?style=for-the-badge&logo=cypress&logoColor=058a5e)
 ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
 
 ### Other Technologies
 
-GitHub Project Board | Figma
+GitHub Project Board | Figma | Excalidraw
 
 ## Installation
 
@@ -56,11 +56,9 @@ git clone https://github.com/dgubko/fuel-buddy.git
 
 ![2023-01-16 19 30 48](https://user-images.githubusercontent.com/105132801/212797334-75a28737-90b9-432a-a1b5-77b0fae8b763.gif)
 
-
 ### Favoriting
 
 ![2023-01-16 19 30 19](https://user-images.githubusercontent.com/105132801/212797227-1c044cba-8826-405f-923d-99c5a029ef3b.gif)
-
 
 ## Planning Process
 
@@ -68,21 +66,19 @@ git clone https://github.com/dgubko/fuel-buddy.git
 
 ![All Stations Page](https://user-images.githubusercontent.com/105132801/212797872-a4a69af2-a959-4c02-94cf-0a0803376a5e.png)
 
-
 ### Favorites Page Figma Wireframe
 
 ![Favorite Page](https://user-images.githubusercontent.com/105132801/212797965-8a1a549f-31e3-4399-94db-cf15e69cecd6.png)
 
-
 ### Details Page Figma Wireframe
 
 ![Detail Page](https://user-images.githubusercontent.com/105132801/212798024-b5608f37-11d1-473b-80df-ba8465ca12d4.png)
-
 
 ## Reflection
 
 - Learning TypeScript has been a valuable experience for me. I have gained a deeper understanding of the importance of strong typing and type annotations in code, which has helped me to write more robust and maintainable code. TypeScript's static type checking has also helped me to catch errors early on in the development process, saving me time and effort in the long run. Additionally, the ability to use React features with TypeScript has been a great advantage, allowing me to write more efficient and expressive code. Overall, I am grateful for the opportunity to learn TypeScript and I look forward to using it in my future projects.
 
 <!-- MARKDOWN LINKS & IMAGES -->
-[React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
-[React-url]: https://reactjs.org/
+
+[react.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
+[react-url]: https://reactjs.org/
